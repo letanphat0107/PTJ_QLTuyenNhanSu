@@ -6,10 +6,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Entity
 @NoArgsConstructor
 @Table(name = "positions")
-public class Position {
+public class Position implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id
     @Column(name = "position_id")
     private String id;

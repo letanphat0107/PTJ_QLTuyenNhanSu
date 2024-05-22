@@ -3,11 +3,14 @@ package entity;
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Entity
 @Table(name = "candidates")
+@lombok.Data
 @NoArgsConstructor
-public class Candidate {
-
+public class Candidate implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id
     @Column(name = "candidate_id")
     private String id;
